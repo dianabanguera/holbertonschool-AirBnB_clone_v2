@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-#!/usr/bin/python3
-"""
-Contains the FileStorage class
-"""
+"""Contains the FileStorage class"""
 
 import json
 from models.amenity import Amenity
@@ -56,7 +53,7 @@ class FileStorage:
                 jo = json.load(f)
             for key in jo:
                 self.__objects[key] = classes[jo[key]["__class__"]](**jo[key])
-        except:
+        except Exception:
             pass
 
     def delete(self, obj=None):
